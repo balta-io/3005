@@ -1,0 +1,69 @@
+﻿@page "/account/create"
+@rendermode InteractiveServer
+@inherits JwtStore.Components.Pages.Contexts.AccountContext.UseCases.Create.ViewModel
+
+<h1>Nova Conta</h1>
+
+<Busy State="State">
+    <h3>Aguarde...</h3>
+    <p>Estamos realizando seu cadastro...</p>
+</Busy>
+
+
+@* *@
+@* @if (State != EState.Busy) *@
+@* { *@
+@*     <EditForm> *@
+@*         <DataAnnotationsValidator/> *@
+@*         <ValidationSummary/> *@
+@* *@
+@*         <div class="mb-3"> *@
+@*             <label class="form-label">Nome Completo</label> *@
+@*             <InputText @bind-Value="Name" *@
+@*                        type="text" *@
+@*                        class="form-control"/> *@
+@*         </div> *@
+@* *@
+@*         <div class="mb-3"> *@
+@*             <label class="form-label">E-mail</label> *@
+@*             <InputText @bind-Value="Email" *@
+@*                        type="email" *@
+@*                        class="form-control"/> *@
+@*         </div> *@
+@* *@
+@*         <div class="mb-3"> *@
+@*             <label class="form-label">Senha</label> *@
+@*             <InputText @bind-Value="Password" *@
+@*                        type="password" *@
+@*                        class="form-control"/> *@
+@*         </div> *@
+@* *@
+@*         <div class="mb-3"> *@
+@*             <label class="form-label">Confirmação de Senha</label> *@
+@*             <InputText @bind-Value="ConfirmPassword" *@
+@*                        type="password" *@
+@*                        class="form-control"/> *@
+@*         </div> *@
+@* *@
+@*         <button type="submit" class="btn btn-primary"> *@
+@*             Salvar *@
+@*         </button> *@
+@*     </EditForm> *@
+@* } *@
+@* else *@
+@* { *@
+@*     if (State == EState.Busy) *@
+@*     { *@
+@*         <p>Salvando suas informações...</p> *@
+@*     } *@
+@*      *@
+@*     if (State == EState.Success) *@
+@*     { *@
+@*         <p>Cadastro realizado com sucesso...</p> *@
+@*     } *@
+@*      *@
+@*     if (State == EState.Error) *@
+@*     { *@
+@*         <p>Falha ao persistir os dados...</p> *@
+@*     } *@
+@* } *@
